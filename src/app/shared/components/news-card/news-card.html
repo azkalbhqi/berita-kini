@@ -1,0 +1,24 @@
+<div class="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col h-full">
+  <div class="relative overflow-hidden h-48">
+    <img [src]="article.image.large"
+         [alt]="article.title"
+         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+  </div>
+
+  <div class="p-5 flex flex-col flex-grow">
+    <h3 class="font-bold text-lg leading-tight text-slate-800 line-clamp-2 group-hover:text-blue-600">
+      {{ article.title }}
+    </h3>
+
+    <p class="text-slate-500 text-sm mt-3 line-clamp-3">
+      {{ article.contentSnippet }}
+    </p>
+
+    <div class="mt-auto pt-4 flex justify-between items-center text-xs text-slate-400">
+      <span>{{ article.isoDate}}</span>
+      <a [href]="article.link" target="_blank" class="text-blue-500 font-semibold hover:underline">
+        Baca Detail →
+      </a>
+    </div>
+  </div>
+</div>

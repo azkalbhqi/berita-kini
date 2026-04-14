@@ -1,0 +1,19 @@
+<nav class="flex px-10 py-4 justify-between items-center bg-white border-b border-gray-100">
+  <div class="flex items-center gap-3">
+    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold">
+      BK
+    </div>
+    <h2 class="font-bold text-xl tracking-tight text-slate-800">Berita Kini</h2>
+  </div>
+
+  <ul class="flex gap-6">
+    @for (item of NavbarItems; track item.name) {
+      <li>
+        <a [routerLink]="item.route"
+           class="text-sm font-medium text-gray-500 hover:text-blue-600 transition-colors duration-200">
+          {{ item.name }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
