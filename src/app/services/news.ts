@@ -7,14 +7,13 @@ import { map } from 'rxjs';
 })
 export class NewsService {
   private http = inject(HttpClient);
-  private baseUrl = 'https://berita-indo-api-next.vercel.app/api/cnn-news';
+  // Point to the proxy prefix defined in proxy.conf.json
+  private baseUrl = '/api-news/cnn-news'; 
 
-  // dynamic func
   getNewsByCategory(category: string) {
-    // lowercase
     const endpoint = category.toLowerCase();
     return this.http.get<any>(`${this.baseUrl}/${endpoint}`).pipe(
-      map(response => response.data) // Ambil array datanya saja
+      map(response => response.data)
     );
   }
 }

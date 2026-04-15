@@ -1,8 +1,10 @@
 {
-  "/api": {
-    "target": "https://berita-indo-api-next.vercel.app/api/cnn-news",
+  "/api-news": {
+    "target": "https://berita-indo-api-next.vercel.app",
     "secure": true,
     "changeOrigin": true,
-    "logLevel": "debug"
+    "pathRewrite": {
+      "^/api-news": "/api"
+    }
   }
 }
